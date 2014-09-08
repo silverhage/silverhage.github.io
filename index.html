@@ -19,50 +19,52 @@
     <![endif]-->
   </head>
   <body>
+
   	<!-- Container -->
     <div class="container-fluid">
+    	<div class="accordion" id="myAccordion">
     	<div class="row">
-
+		</div>
 		</div>
     </div>
     
     <!-- Modal -->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	  <div class="modal-dialog">
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-	        <h4 class="modal-title" id="myModalLabel">たら</h4>
 	      </div>
 	      <div class="modal-body">
-	        <h5>If <small>ル、タ</small></h5>
-	        <p class="bg-warning">わからない言葉があったら、ゆっくり話してもらう。</p>
-	        <p class="bg-warning">間違えたら、二度と同じ間違いをしないように気をつける。</p>
-	        <h5>If <small>ル、タ</small></h5>
-	        <p class="bg-warning">わからない言葉があったら、ゆっくり話してもらう。</p>
-	        <p class="bg-warning">間違えたら、二度と同じ間違いをしないように気をつける。</p>
 	      </div>
 	    </div>
 	  </div>
-	</div>
+	</div> -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+
     <!-- Pace Loader -->
     <script src="js/pace.min.js"></script>
+
     <!-- JSON -->
     <script type="text/javascript"> 
 	$(document).ready(function() {	
 	$(function listGrammar() {	
 	$.getJSON( "https://spreadsheets.google.com/feeds/list/1DXI_J2wn7C3mDRGSWwh5lJZ0rdAArYfX30jPGm-A_Fo/od6/public/values?alt=json-in-script&callback=?",
 		function (data) {	
-			$('div.row').append('<div class="col-xs-3"></div>');
 			$.each(data.feed.entry, function(i,entry) {	
-				var item = '<span style="display:none">' + entry.id.$t + '</span>';		
-				item += entry.gsx$grammar.$t;		
-				$('.col-xs-3').append('<button type="button" class="btn btn-lg btn-default btn-block">' + item + '</button>');	
+				var grammar = entry.gsx$grammar.$t;
+				var explanation1 = entry.gsx$explanation1.$t;
+				var requires1 = entry.gsx$requires1.$t;
+				var sample1a = entry.gsx$sample1a.$t;
+				var sample1b = entry.gsx$sample1b.$t;
+				var notes1 = entry.gsx$notes1.$t;
+				$('div.row').append('<div class="col-xs-12"><button type="button" class="btn" data-toggle="collapse" data-target="#' + grammar + '" data-parent="#myAccordion">' + grammar + '</button><div id="' + grammar + '" class="collapse collapsed"><h5>' + explanation1 + '<small> ' + requires1 + '</small></h5><p><mark>' + sample1a + '</mark></p><p><mark>' + sample1b + '</mark></p><p><small>' + notes1 + '</small></p></div></div>');
+
 				});
 			});
 		});
