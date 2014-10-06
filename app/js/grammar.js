@@ -14,7 +14,7 @@
 				var sample2a = entry.gsx$sample2a.$t;
 				var sample2b = entry.gsx$sample2b.$t;
 				var notes2 = entry.gsx$notes2.$t;
-				$('div.row').append('<div class="col-xs-12"><button type="button" class="btn" data-toggle="collapse" data-target="#' + grammar + '">' + grammar + '</button><div id="' + grammar + '" class="collapse collapsed"><h4>' + explanation1 + '</h4><p><small> ' + requires1 + '</small></p><p><mark>' + sample1a + '</mark></p><p><mark>' + sample1b + '</mark></p><p><small>' + notes1 + '</small></p><h4>' + explanation2 + '</h4><p><small> ' + requires1 + '</small></p><p><mark>' + sample2a + '</mark></p><p><mark>' + sample2b + '</mark></p><p><small>' + notes2 + '</small></p></div></div>');
+				$('div.row').append('<div class="col-xs-12"><button type="button" class="btn" data-toggle="collapse" data-target="#' + grammar + '">' + grammar + '<span class="explanation">' + explanation1 + '</span></button><div id="' + grammar + '" class="collapse collapsed"><p><small>Requires</small></p><p><h4>' + requires1 + '</h4></p><p><small>Sample sentences</small></p><p><mark>' + sample1a + '</mark></p><p><mark>' + sample1b + '</mark></p><p><small>' + notes1 + '</small></p></div></div>');
 
 				});
 			});
