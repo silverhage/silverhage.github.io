@@ -9,7 +9,7 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom Classes -->
-    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/custom.min.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,25 +19,53 @@
     <![endif]-->
   </head>
   <body>
+    <!-- Pace Loader -->
+    <script src="js/pace.min.js"></script>
+
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">リストワークス</a>
+          <span class="explanation">Japanese Grammar. Structured.</span>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" data-toggle="modal" data-target="#myModal">Filter</a></li>
+        </ul>
+      </div>
+      <!--<form class="navbar-form navbar-center">
+            <input type="text" class="form-control" placeholder="Search...">
+      </form>-->
+    </div>
 
   	<!-- Container -->
     <div class="container-fluid">
     	<div class="row">
+        <div class="col-xs-12">
+        </div>
 		  </div>
     </div>
     
     <!-- Modal -->
-	<!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	  <div class="modal-dialog">
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 	      </div>
 	      <div class="modal-body">
+          <p><small>Filters</small></p>
+          <span class="label label-default">Default</span>
+          <span class="label label-primary">Primary</span>
+          <span class="label label-success">Success</span>
+          <span class="label label-info">Info</span>
+          <span class="label label-warning">Warning</span>
+          <span class="label label-danger">Danger</span>
 	      </div>
 	    </div>
 	  </div>
-	</div> -->
+	</div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -45,10 +73,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
 
-    <!-- Pace Loader -->
-    <script src="js/pace.min.js"></script>
-
     <!-- JSON -->
-    <script src="js/grammar.js"> </script>
+    <script src="js/grammar.min.js"> </script>
   </body>
 </html>

@@ -4,19 +4,18 @@
 		function (data) {	
 			$.each(data.feed.entry, function(i,entry) {	
 				var grammar = entry.gsx$grammar.$t;
-				var explanation1 = entry.gsx$explanation1.$t;
-				var requires1 = entry.gsx$requires1.$t;
-				var sample1a = entry.gsx$sample1a.$t;
-				var sample1b = entry.gsx$sample1b.$t;
-				var notes1 = entry.gsx$notes1.$t;
-				var explanation2 = entry.gsx$explanation2.$t;
-				var requires2 = entry.gsx$requires2.$t;
-				var sample2a = entry.gsx$sample2a.$t;
-				var sample2b = entry.gsx$sample2b.$t;
-				var notes2 = entry.gsx$notes2.$t;
-				$('div.row').append('<div class="col-xs-12"><button type="button" class="btn" data-toggle="collapse" data-target="#' + grammar + '">' + grammar + '<span class="explanation">' + explanation1 + '</span></button><div id="' + grammar + '" class="collapse collapsed"><p><small>Requires</small></p><p><h4>' + requires1 + '</h4></p><p><small>Sample sentences</small></p><p><mark>' + sample1a + '</mark></p><p><mark>' + sample1b + '</mark></p><p><small>' + notes1 + '</small></p></div></div>');
+				var explanation = entry.gsx$explanation.$t;
+				var requires = entry.gsx$requires.$t;
+				var example1 = entry.gsx$example1.$t;
+				var example2 = entry.gsx$example2.$t;
+				var example3 = entry.gsx$example3.$t;
+				if (example3.length === 0) {
+					$(".mark", this).addClass("hidden");
+				}
+				var notes = entry.gsx$notes.$t;
+				$('div.row').append('<div class="col-xs-12"><button type="button" class="btn" data-toggle="collapse" data-target="#' + grammar + '">' + grammar + '<span class="explanation">' + explanation + '</span></button><div id="' + grammar + '" class="collapse collapsed"><p><small>Requires</small></p><p><h4>' + requires + '</h4></p><p><small>Sample sentences</small></p><div class="sample"><p><span class="glyphicon glyphicon-chevron-right"></span><mark>' + example1 + '</mark></p></div><div class="sample"><p><span class="glyphicon glyphicon-chevron-right"></span><mark>' + example2 + '</mark></p></div><div class="sample3"><p><span class="glyphicon glyphicon-chevron-right"></span><mark>' + example3 + '</mark></p></div><p><small>Notes</small></p><p><span class="notes">' + notes + '</span></p></div></div>');
 
-				});
+			});
 			});
 		});
 	});
