@@ -54,10 +54,18 @@ body {
   background-color: #eee;
 }
 
-.collapse, .collapsing, .collapse.in {
-  padding: 10px 20px 30px;
+/* Content */
+
+.collapse, .collapsing, .collapse.in, .collapsing {
+  padding: 0px 20px 0px;
   background-color: #eee;
   border-top: 1px solid #ddd;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .buttonsample {
@@ -86,10 +94,12 @@ body {
   border: 0px;
 }
 
-.navbar-form {
+body .navbar-form {
   display: inline;
   color: #fff;
   border: 0px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
 }
 
 .form-control, .search-input {
@@ -131,6 +141,10 @@ body {
 
 /* Content */
 
+p {
+  margin: 10px 0 0px;
+}
+
 [class*="col-"] {
   padding: 0px;
   border: 0px;
@@ -155,7 +169,6 @@ small {
   color: #ccc;
   font-weight: bold;
   text-transform: uppercase;
-  padding-bottom: 20px;
 }
 
 .notes {
