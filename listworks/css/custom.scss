@@ -28,6 +28,7 @@ body {
 .btn, .btn-group-lg>.btn {
   border-radius: 0px;
   padding: 10px 20px;
+  margin-top: 10px;
   width: 100%;
   text-align: left;
   font-weight: bold;
@@ -57,9 +58,13 @@ body {
 /* Content */
 
 .collapse, .collapsing, .collapse.in, .collapsing {
-  padding: 0px 20px 0px;
+  padding: 0px 20px;
   background-color: #eee;
   border-top: 1px solid #ddd;
+}
+
+.inside {
+  padding: 10px 0px;
 }
 
 .clearfix:after {
@@ -75,6 +80,32 @@ body {
   font-size: 18px;
   line-height: 20px;
   vertical-align: middle;
+}
+
+[class*="col-"] {
+  padding: 0px;
+  border: 0px;
+}
+
+.row {
+  margin-bottom: 0px;
+}
+.row .row {
+  margin-top: 0px;
+  margin-bottom: 0;
+}
+
+hr {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.clear { 
+    clear:both; 
+}
+
+.hidden {
+    display: none;
 }
 
 /* Navbar */
@@ -139,19 +170,14 @@ body .navbar-form {
     color: #fff;
 }
 
-/* Content */
+/* Text */
 
 p {
   margin: 10px 0 0px;
 }
 
-[class*="col-"] {
-  padding: 0px;
-  border: 0px;
-}
-
 h4 {
-  margin-top: 0px;
+  margin: 0px;
   color: #009999;
   font-size: 18px;
   line-height: 34px;
@@ -165,14 +191,15 @@ mark {
 }
 
 small {
-  font-size: 12px;
+  font-size: 10px;
   color: #ccc;
   font-weight: bold;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .notes {
-  color: #999988;
+  color: #333;
   font-size: 18px;
 }
 
@@ -185,7 +212,7 @@ small {
 .explanation {
   font-size: 12px;
   font-weight: normal;
-  color: #999988;
+  color: #999;
   display: block;
   clear: both;
 }
@@ -193,27 +220,6 @@ small {
 .label { 
     float: right;
     background-color: #f99157;
-}
-
-.hidden {
-    display: none;
-}
-
-.row {
-  margin-bottom: 0px;
-}
-.row .row {
-  margin-top: 0px;
-  margin-bottom: 0;
-}
-
-hr {
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-
-.clear { 
-    clear:both; 
 }
 
 /* Pace.js */
@@ -234,23 +240,21 @@ hr {
   position: fixed;
   z-index: 2000;
   top: 0;
-  right: 0;
+  right: 15px;
   height: 5rem;
-  width: 5rem;
-
 }
 
 .pace .pace-progress:after {
   display: block;
   position: absolute;
-  top: 6px;
+  top: 15px;
   right: .5rem;
   content: attr(data-progress-text);
   font-family: "Helvetica Neue", sans-serif;
   font-weight: 100;
-  font-size: 48px;
-  color: #ccc;
-  line-height: 1;
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.5;
   text-align: right;
 }
 
