@@ -5,7 +5,7 @@ $(document).ready(function() {
 	// Toggles button focus and scrolls view to active button
     $(document).on("click", ".btn", function(e) {
 	    $(this).toggleClass("focus");
-        
+        ga('send', 'event', 'btn', 'grammar');
         $('html, body').animate({
 		    scrollTop: $(this, ".focus").offset().top -72
 		}, 300, 'swing');
@@ -40,10 +40,14 @@ $(document).ready(function() {
 			});
 			});
 		});
+
 	});
 
-// Clear Search
-
-$("#search-clear").click(function(){
-    $("#search-input").val('');
-});
+	// Disables Enter button in search
+	$(document).ready(function() {
+	  $("#search-input").keydown(function(event){
+	    if(event.keyCode == 13) {
+	      event.preventDefault();
+	    }
+	  });
+	});
