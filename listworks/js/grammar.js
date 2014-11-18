@@ -5,7 +5,7 @@ $(document).ready(function() {
 	// Toggles button focus and scrolls view to active button
     $(document).on("click", ".btn", function(e) {
 	    $(this).toggleClass("focus");
-        ga('send', 'event', 'btn', 'grammar');
+
         $('html, body').animate({
 		    scrollTop: $(this, ".focus").offset().top -72
 		}, 300, 'swing');
@@ -25,7 +25,7 @@ $(document).ready(function() {
 				var notes = entry.gsx$notes.$t;
 				console.log(notes.length);
 
-				$('div.row').append('<div class="col-xs-12"><button type="button" class="btn" data-toggle="collapse" data-parent="#accordion" data-target="#' + grammar + '"><div><span class="grammar">' + grammar + '</span><span class="buttonsample">' + example1 + '</span><span class="explanation">' + explanation + '</span></div></button><div id="' + grammar + '" class="clearfix collapse collapsed"><div class="inside">' + (notes.length != 0 ? '<small>Notes</small><div class="notes">' + notes + '</div>' : '') + '<small>Requires</small><h4>' + requires + '</h4><small>Sample sentences</small><div class="sample"><span class="glyphicon glyphicon-chevron-right"></span><mark>' + example1 + '</mark></div>' + (example2.length != 0 ? '<div class="sample3"><span class="glyphicon glyphicon-chevron-right"></span><mark>' + example2 + '</mark></div>' : '') + (example3.length != 0 ? '<div class="sample3"><span class="glyphicon glyphicon-chevron-right"></span><mark>' + example3 + '</mark></div>' : '') + '</div></div></div>');
+				$('div.row').append('<div class="col-xs-12"><button type="button" class="btn" data-toggle="collapse" data-parent="#accordion" data-target="#' + grammar + '" onclick="ga('send', 'event', 'grammarcard', ' + grammar + ');"><div><span class="grammar">' + grammar + '</span><span class="buttonsample">' + example1 + '</span><span class="explanation">' + explanation + '</span></div></button><div id="' + grammar + '" class="clearfix collapse collapsed"><div class="inside">' + (notes.length != 0 ? '<small>Notes</small><div class="notes">' + notes + '</div>' : '') + '<small>Requires</small><h4>' + requires + '</h4><small>Sample sentences</small><div class="sample"><span class="glyphicon glyphicon-chevron-right"></span><mark>' + example1 + '</mark></div>' + (example2.length != 0 ? '<div class="sample3"><span class="glyphicon glyphicon-chevron-right"></span><mark>' + example2 + '</mark></div>' : '') + (example3.length != 0 ? '<div class="sample3"><span class="glyphicon glyphicon-chevron-right"></span><mark>' + example3 + '</mark></div>' : '') + '</div></div></div>');
 				
 
 
